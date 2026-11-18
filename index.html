@@ -1,8 +1,107 @@
 <!DOCTYPE html>
-<html>
-  <head><title>My Site</title></head>
-  <body>
-    <h1>Hello, world!</h1>
-    <p>My first GitHub Pages site.</p>
-  </body>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Site</title>
+<style>
+  :root {
+    --bg-top: #34363a;
+    --bg-bottom: #1f2023;
+    --tile: #2c2e32;
+    --tile-hover: #393c41;
+    --edge: #4a4d53;
+    --text: #ffffff;
+    --muted: #b9bcc2;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: linear-gradient(160deg, var(--bg-top), var(--bg-bottom)) fixed;
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
+  header { text-align: center; margin-bottom: 48px; }
+  h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); font-size: 1.1rem; }
+  nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 40px 24px;
+    min-height: 240px;
+    background: var(--tile);
+    border: 1px solid var(--edge);
+    border-radius: 28px;
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  }
+  .box:hover, .box:focus-visible {
+    background: var(--tile-hover);
+    border-color: #8a8e96;
+    transform: translateY(-4px);
+    outline: none;
+  }
+  .box:focus-visible { box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6); }
+  .box svg { width: 64px; height: 64px; stroke: var(--text); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .box h2 { margin: 0; font-size: 1.5rem; font-weight: 600; }
+  .box span { color: var(--muted); font-size: 0.95rem; text-align: center; }
+  @media (prefers-reduced-motion: reduce) { .box { transition: none; } .box:hover { transform: none; } }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Welcome</h1>
+    <p>Choose a topic to explore.</p>
+  </header>
+
+  <nav>
+    <a class="box" href="auditing.html">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="14" y="8" width="36" height="48" rx="4"/>
+        <path d="M22 22l4 4 8-8"/>
+        <path d="M22 36h20M22 44h14"/>
+      </svg>
+      <h2>Auditing</h2>
+      <span>Standards, methods and practice</span>
+    </a>
+
+    <a class="box" href="banks.html">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M8 24L32 10l24 14z"/>
+        <path d="M14 28v20M26 28v20M38 28v20M50 28v20"/>
+        <path d="M8 52h48"/>
+      </svg>
+      <h2>Banks</h2>
+      <span>Banking, regulation and finance</span>
+    </a>
+
+    <a class="box" href="formula1.html">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M16 8v48"/>
+        <path d="M16 10h32v24H16"/>
+        <path d="M16 10h8v8h-8zM32 10h8v8h-8zM24 18h8v8h-8zM40 18h8v8h-8zM16 26h8v8h-8zM32 26h8v8h-8z"/>
+      </svg>
+      <h2>Formula 1</h2>
+      <span>Teams, drivers and races</span>
+    </a>
+  </nav>
+</body>
 </html>
